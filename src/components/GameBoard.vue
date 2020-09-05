@@ -45,7 +45,6 @@ export default {
 			iteratorTimeout: 0,
 			blocked: true,
 			interval: null,
-			previous: null,
 			timeouts: [],
 		};
 	},
@@ -62,35 +61,27 @@ export default {
 							this.endRound();
 						}
 						this.iteratorTimeout === this.colors.length && this.nextRound();
-					}, 500)
+					}, this.delay / 2)
 				);
 			}
 		},
 		startRaund() {
 			this.interval = setInterval(() => {
-				this.$refs[this.previous]?.classList.remove("clicked");
 				if (this.iteratorInterval < this.colors.length) {
 					this.$refs[this.colors[this.iteratorInterval]].classList.add(
 						"clicked"
 					);
-					if (
-						this.colors[this.iteratorInterval] ===
-						this.colors[this.iteratorInterval + 1]
-					) {
-						this.timeouts.push(
-							setTimeout(
-								(color) => {
-									this.$refs[color].classList.remove("clicked");
-								},
-								this.delay / 2,
-								this.colors[this.iteratorInterval]
-							)
-						);
-					}
-					this.previous = this.colors[this.iteratorInterval];
+					this.timeouts.push(
+						setTimeout(
+							(color) => {
+								this.$refs[color].classList.remove("clicked");
+							},
+							this.delay / 2,
+							this.colors[this.iteratorInterval]
+						)
+					);
 					this.iteratorInterval++;
 				} else {
-					this.previous = null;
 					this.iteratorInterval = 0;
 					this.blocked = false;
 					clearInterval(this.interval);
