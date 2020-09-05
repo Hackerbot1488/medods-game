@@ -129,80 +129,80 @@ $green_active: #008b00
 $orange-common: #FFE0B2
 $orange_active: #E65100
 .game-board
-  width: 300px
-  height: 300px
-  margin: 0 auto
-  border: 4px solid white
-  border-radius: 50%
-  background-color: white
-  position: relative
-  &__button
-    width: calc(100%/2)
-    height: calc(100%/2)
-    border: none
-    position: absolute
-    outline: none
-    cursor: pointer
-    &.t-400
-      transition: 0.4s
-    &.t-1000
-      transition: 1s
-    &.t-1500
-      transition: 1.5s
-    &_blue
-      border: 2px solid white
-      border-right: none
-      border-bottom: none
-      border-top-left-radius: 100%
-      border-color: $blue_common
-      background-color: $blue_common
-      top: 0
-      left: 0
-      &.clicked
-        border-color: $blue_active
-        background-color: $blue_active
-      &:hover
-        border-color: $blue_active
-    &_red
-      border: 2px solid white
-      border-left: none
-      border-bottom: none
-      border-top-right-radius: 100%
-      border-color: $red_common
-      background-color: $red_common
-      right: 0
-      top: 0
-      &.clicked
-        border-color: $red_active
-        background-color: $red_active
-      &:hover
-        border-color: $red_active
-    &_green
-      border: 2px solid white
-      border-left: none
-      border-top: none
-      border-bottom-right-radius: 100%
-      border-color: $green_common
-      background-color: $green_common
-      right: 0
-      bottom: 0
-      &.clicked
-        border-color: $green_active
-        background-color: $green_active
-      &:hover
-        border-color: $green_active
-    &_orange
-      border: 2px solid white
-      border-right: none
-      border-top: none
-      border-bottom-left-radius: 100%
-      border-color: $orange_common
-      background-color: $orange_common
-      left: 0
-      bottom: 0
-      &.clicked
-        border-color: $orange_active
-        background-color: $orange_active
-      &:hover
-        border-color: $orange_active
+	width: 300px
+	height: 300px
+	margin: 0 auto
+	border: 4px solid white
+	border-radius: 50%
+	background-color: white
+	position: relative
+	&__button
+		width: calc(100%/2)
+		height: calc(100%/2)
+		border: none
+		position: absolute
+		outline: none
+		cursor: pointer
+		&.t-400
+			transition: 0.4s
+		&.t-1000
+			transition: 1s
+		&.t-1500
+			transition: 1.5s
+		&_blue
+			border: 2px solid white
+			border-right: none
+			border-bottom: none
+			border-top-left-radius: 100%
+			border-color: $blue_common
+			background-color: $blue_common
+			top: 0
+			left: 0
+			&.clicked
+				border-color: $blue_active
+				background-color: $blue_active
+			&:hover
+				border-color: $blue_active
+		&_red
+			border: 2px solid white
+			border-left: none
+			border-bottom: none
+			border-top-right-radius: 100%
+			border-color: $red_common
+			background-color: $red_common
+			right: 0
+			top: 0
+			&.clicked
+				border-color: $red_active
+				background-color: $red_active
+			&:hover
+				border-color: $red_active
+		&_green
+			border: 2px solid white
+			border-left: none
+			border-top: none
+			border-bottom-right-radius: 100%
+			border-color: $green_common
+			background-color: $green_common
+			right: 0
+			bottom: 0
+			&.clicked
+				border-color: $green_active
+				background-color: $green_active
+			&:hover
+				border-color: $green_active
+		&_orange
+			border: 2px solid white
+			border-right: none
+			border-top: none
+			border-bottom-left-radius: 100%
+			border-color: $orange_common
+			background-color: $orange_common
+			left: 0
+			bottom: 0
+			&.clicked
+				border-color: $orange_active
+				background-color: $orange_active
+			&:hover
+				border-color: $orange_active
 </style>
