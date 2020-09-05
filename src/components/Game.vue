@@ -72,7 +72,6 @@ export default {
 			this.addColor();
 			this.round = 1;
 			this.isPlaying = true;
-			console.log(this.delay);
 			this.lost = false;
 			this.updateBoard();
 			this.updateOptions();
