@@ -22,11 +22,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
 *
   box-sizing: border-box
-body, html
+body
   margin: 0
   padding: 0
-  width: 100%
-  min-height: 100vh
 #app
   font-family: 'Poppins', sans-serif
   -webkit-font-smoothing: antialiased
@@ -38,6 +36,8 @@ body, html
   background-color: #aff1d1
   color: #b71c1c
   min-height: 100vh
+  padding-top: 50px
+  padding-bottom: 50px
   display: flex
   align-items: center
 </style>
