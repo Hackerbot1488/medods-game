@@ -5,21 +5,37 @@
 			data-color="blue"
 			ref="blue"
 		></button>
+		<audio ref="audio_blue">
+			<source src="@/sounds/blue.ogg" type="audio/ogg" />
+			<source src="@/sounds/blue.mp3" type="audio/mp3" />
+		</audio>
 		<button
 			:class="['game-board__button', 'game-board__button_red',  !!delay ? `t-${delay}` : '']"
 			data-color="red"
 			ref="red"
 		></button>
+		<audio ref="audio_red">
+			<source src="@/sounds/red.ogg" type="audio/ogg" />
+			<source src="@/sounds/red.mp3" type="audio/mp3" />
+		</audio>
 		<button
 			:class="['game-board__button', 'game-board__button_green',  !!delay ? `t-${delay}` : '']"
 			data-color="green"
 			ref="green"
 		></button>
+		<audio ref="audio_green">
+			<source src="@/sounds/green.ogg" type="audio/ogg" />
+			<source src="@/sounds/green.mp3" type="audio/mp3" />
+		</audio>
 		<button
 			:class="['game-board__button', 'game-board__button_orange',  !!delay ? `t-${delay}` : '']"
 			data-color="orange"
 			ref="orange"
 		></button>
+		<audio ref="audio_orange">
+			<source src="@/sounds/orange.ogg" type="audio/ogg" />
+			<source src="@/sounds/orange.mp3" type="audio/mp3" />
+		</audio>
 	</div>
 </template>
 <script>
@@ -52,6 +68,8 @@ export default {
 		onClick(e) {
 			if (!e.target.dataset.role) {
 				e.target.classList.add("clicked");
+				this.$refs[`audio_${e.target.dataset.color}`].currentTime = 0;
+				this.$refs[`audio_${e.target.dataset.color}`].play();
 				this.timeouts.push(
 					setTimeout(
 						() => {
@@ -76,6 +94,10 @@ export default {
 					this.$refs[this.colors[this.iteratorInterval]].classList.add(
 						"clicked"
 					);
+					this.$refs[
+						`audio_${this.colors[this.iteratorInterval]}`
+					].currentTime = 0;
+					this.$refs[`audio_${this.colors[this.iteratorInterval]}`].play();
 					this.timeouts.push(
 						setTimeout(
 							(color) => {
