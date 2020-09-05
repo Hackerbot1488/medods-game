@@ -53,15 +53,20 @@ export default {
 			if (!e.target.dataset.role) {
 				e.target.classList.add("clicked");
 				this.timeouts.push(
-					setTimeout(() => {
-						e.target.classList.remove("clicked");
-						if (e.target.dataset.color === this.colors[this.iteratorTimeout]) {
-							this.iteratorTimeout++;
-						} else {
-							this.endRound();
-						}
-						this.iteratorTimeout === this.colors.length && this.nextRound();
-					}, this.delay / 2)
+					setTimeout(
+						() => {
+							e.target.classList.remove("clicked");
+							if (
+								e.target.dataset.color === this.colors[this.iteratorTimeout]
+							) {
+								this.iteratorTimeout++;
+							} else {
+								this.endRound();
+							}
+							this.iteratorTimeout === this.colors.length && this.nextRound();
+						},
+						this.delay > 1000 ? 500 : this.delay / 2
+					)
 				);
 			}
 		},
