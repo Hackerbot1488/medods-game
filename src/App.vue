@@ -19,7 +19,24 @@ export default {
 </script>
 
 <style lang="sass">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
+@font-face 
+  font-family: "Poppins"
+  src: url("/fonts/Poppins/Poppins-Regular.eot")
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("opentype"),
+		url("/fonts/Poppins/Poppins-Regular.woff2") format("woff2"),
+		url("/fonts/Poppins/Poppins-Regular.svg") format("svg")
+  font-style: normal
+  font-weight: normal
+
+@font-face
+  font-family: "Poppins"
+  src: url("/fonts/Poppins/Poppins-Bold.eot")
+  src: url("/fonts/Poppins/Poppins-Bold.ttf") format("opentype"),
+		url("/fonts/Poppins/Poppins-Bold.woff2") format("woff2"),
+		url("/fonts/Poppins/Poppins-Bold.svg") format("svg")
+  font-style: normal
+  font-weight: bold
+
 *
   box-sizing: border-box
 body
