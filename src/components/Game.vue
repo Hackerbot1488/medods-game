@@ -17,6 +17,7 @@
 				:key="keyOpt"
 				:game="isPlaying"
 				:lastRound="lastRound"
+				:lightDelay="String(delay)"
 				@start-game="startGame"
 				@delayChange="(value) => delay = value"
 			/>
