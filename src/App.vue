@@ -22,18 +22,18 @@ export default {
 @font-face 
   font-family: "Poppins"
   src: url("/fonts/Poppins/Poppins-Regular.eot")
-  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("opentype"),
-		url("/fonts/Poppins/Poppins-Regular.woff2") format("woff2"),
-		url("/fonts/Poppins/Poppins-Regular.svg") format("svg")
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("opentype")
+  src: url("/fonts/Poppins/Poppins-Regular.woff2") format("woff2")
+  src: url("/fonts/Poppins/Poppins-Regular.svg") format("svg")
   font-style: normal
   font-weight: normal
 
 @font-face
   font-family: "Poppins"
   src: url("/fonts/Poppins/Poppins-Bold.eot")
-  src: url("/fonts/Poppins/Poppins-Bold.ttf") format("opentype"),
-		url("/fonts/Poppins/Poppins-Bold.woff2") format("woff2"),
-		url("/fonts/Poppins/Poppins-Bold.svg") format("svg")
+  src: url("/fonts/Poppins/Poppins-Bold.ttf") format("opentype")
+  src: url("/fonts/Poppins/Poppins-Bold.woff2") format("woff2")
+  src: url("/fonts/Poppins/Poppins-Bold.svg") format("svg")
   font-style: normal
   font-weight: bold
 
