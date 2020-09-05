@@ -46,17 +46,23 @@ export default {
 			type: Number,
 			default: 0,
 		},
+		lightDelay: {
+			type: String,
+			default: "1000",
+		},
 	},
 	data() {
 		return {
-			delay: 1000,
+			delay: "1000",
 		};
 	},
 	watch: {
 		delay() {
-			console.log(this.delay);
-			!this.game && this.$emit("delayChange", this.delay);
+			!this.game && this.$emit("delayChange", Number(this.delay));
 		},
+	},
+	mounted() {
+		this.lightDelay !== this.delay && (this.delay = this.lightDelay);
 	},
 };
 </script>
