@@ -5,7 +5,7 @@
 			<button class="game-options__button" @click="() => !game && $emit('start-game')">Start</button>
 		</div>
 		<div class="game-options__container">
-			<p v-if="lost" class="game-options__message">Sorry, you lost after {{round-1}} rounds.</p>
+			<p v-if="lost" class="game-options__message">Sorry, you lost on {{lastRound}} round.</p>
 		</div>
 		<div class="game-options__container">
 			<h2 class="game-options__title">Complexity:</h2>
@@ -42,6 +42,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		lastRound: {
+			type: Number,
+			default: 0,
+		},
 	},
 	data() {
 		return {
@@ -50,6 +54,7 @@ export default {
 	},
 	watch: {
 		delay() {
+			console.log(this.delay);
 			!this.game && this.$emit("delayChange", this.delay);
 		},
 	},
@@ -57,42 +62,54 @@ export default {
 </script>
 <style lang="sass" scoped>
 .game-options
-  display: flex
-  flex-direction: column
-  color: white
-  margin: 0 auto
-  &__container
-    display: flex
-    flex-direction: column
-    width: 150px
-  &__button
-    padding: 10px 20px
-    font-size: 20px
-    border: none
-    outline: none
-    border-radius: 10px
-    background-color: #ffcdd2
-    color: white
-    cursor: pointer
-  &__complexity
-    display: flex
-    flex-direction: column
-    label
-      font-size: 20px
-      font-family: Arial, Helvetica, sans-serif
-      margin-left: 15px
-    input
-      margin: 0
-    .wrap-radio
-      margin-top: 5px
-      margin-bottom: 5px
-      display: flex
-      align-items: center
-  &__container
-    flex: 1
-  &__title
-    font-size: 25px
-    font-family: Arial, Helvetica, sans-serif
-    text-align: left
-  
+	display: flex
+	flex-direction: column
+	margin: 0 auto
+	&__container
+		display: flex
+		flex-direction: column
+		width: 300px
+	&__button
+		padding: 10px 20px
+		font-size: 20px
+		max-width: 120px
+		border: none
+		outline: none
+		border-radius: 10px
+		color: #aff1d1
+		/** background-color: #FFCCBC **/
+		background-color: #E53935
+		cursor: pointer
+		transition: .5s
+		&:hover
+			/** background-color: #FF5722 **/
+			background-color: #B71C1C
+	&__complexity
+		display: flex
+		flex-direction: column
+		label
+			font-size: 20px
+			margin-left: 15px
+		input
+			margin: 0
+		.wrap-radio
+			margin-top: 5px
+			margin-bottom: 5px
+			display: flex
+			align-items: center
+	&__container
+		min-height: 54px
+	&__title
+		font-size: 25px
+		margin: 0 0 5px
+		font-weight: bold
+		text-align: left
+	&__message
+		font-size: 15px
+		text-align: left
+@media (max-width: 720px)
+	.game-options
+		&__container
+			width: 270px
+			margin-left: 30px
 </style>

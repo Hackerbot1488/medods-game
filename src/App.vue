@@ -19,20 +19,24 @@ export default {
 </script>
 
 <style lang="sass">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
 *
   box-sizing: border-box
-body
+body, html
   margin: 0
   padding: 0
+  width: 100%
   min-height: 100vh
 #app
-  font-family: Avenir, Helvetica, Arial, sans-serif
+  font-family: 'Poppins', sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  text-align: center
+  /** overflow: hidden **/
   /** background-color: #263238 **/
   /** background-color: #9395ff **/
-  background-color: black
+  /** background-color: #d2c2fd **/
+  background-color: #aff1d1
+  color: #b71c1c
   min-height: 100vh
   display: flex
   align-items: center

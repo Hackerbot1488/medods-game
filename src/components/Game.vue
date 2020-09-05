@@ -16,6 +16,7 @@
 				:round="round"
 				:key="keyOpt"
 				:game="isPlaying"
+				:lastRound="lastRound"
 				@start-game="startGame"
 				@delayChange="(value) => delay = value"
 			/>
@@ -33,12 +34,13 @@ export default {
 			colors: ["blue", "red", "orange", "green"],
 			colorsForRound: [],
 			round: 0,
-			delay: 400,
+			delay: 1000,
 			isPlaying: false,
 			keyComp: 454848,
 			keyOpt: 735735,
 			timeouts: [],
 			lost: false,
+			lastRound: 0,
 		};
 	},
 	methods: {
@@ -56,11 +58,11 @@ export default {
 			);
 		},
 		endGame() {
-			console.log("end game");
 			this.colorsForRound = [];
-			this.updateOptions();
-			this.round = 0;
 			this.lost = true;
+			this.lastRound = this.round;
+			this.round = 0;
+			this.updateOptions();
 			this.isPlaying = false;
 			this.updateBoard();
 			this.clearTimeouts();
@@ -69,6 +71,7 @@ export default {
 			this.addColor();
 			this.round = 1;
 			this.isPlaying = true;
+			console.log(this.delay);
 			this.lost = false;
 			this.updateBoard();
 			this.updateOptions();
@@ -96,10 +99,20 @@ export default {
 <style scoped lang="sass">
 .game
 	margin: 0 auto
-	max-width: 1000px
+	max-width: 720px
 	display: flex
-	flex: 1
 	&__container
-		flex: 1
+		width: 300px
 		align-items: center
+		margin-left: 60px
+
+@media (max-width: 720px)
+	.game
+		width: 100%
+		flex-direction: column
+		margin: 0
+		&__container
+			margin: 0 auto
+		&__container:last-child
+			margin-top: 30px
 </style>
