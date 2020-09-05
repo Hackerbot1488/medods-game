@@ -128,27 +128,6 @@ $green-common: #defabb
 $green_active: #008b00
 $orange-common: #FFE0B2
 $orange_active: #E65100
-@keyframes blueToActive
-	0%
-		background-color: $blue_active
-	75%
-		background-color: $blue_common
-@keyframes orangeToActive
-	0%
-		background-color: $orange_active
-	75%
-		background-color: $orange_common
-@keyframes redToActive
-	0%
-		background-color: $red_active
-	75%
-		background-color: $red_common
-@keyframes greenToActive
-	0%
-		background-color: $green_active
-	75%
-		background-color: $green_common
-
 .game-board
 	width: 300px
 	height: 300px
@@ -180,8 +159,8 @@ $orange_active: #E65100
 			top: 0
 			left: 0
 			&.clicked
-				animation: blueToActive 1s ease-in
-				animation-iteration-count: 1
+				border-color: $blue_active
+				background-color: $blue_active
 			&:hover
 				border-color: $blue_active
 		&_red
@@ -194,8 +173,8 @@ $orange_active: #E65100
 			right: 0
 			top: 0
 			&.clicked
-				animation: redToActive 1s ease-in
-				animation-iteration-count: 1
+				border-color: $red_active
+				background-color: $red_active
 			&:hover
 				border-color: $red_active
 		&_green
@@ -208,8 +187,8 @@ $orange_active: #E65100
 			right: 0
 			bottom: 0
 			&.clicked
-				animation: greenToActive 1s ease-in
-				animation-iteration-count: 1
+				border-color: $green_active
+				background-color: $green_active
 			&:hover
 				border-color: $green_active
 		&_orange
@@ -222,8 +201,8 @@ $orange_active: #E65100
 			left: 0
 			bottom: 0
 			&.clicked
-				animation: orangeToActive 1s ease-in
-				animation-iteration-count: 1
+				border-color: $orange_active
+				background-color: $orange_active
 			&:hover
 				border-color: $orange_active
 </style>
