@@ -1,26 +1,29 @@
 <template>
-	<div class="game">
-		<div class="game__container">
-			<GameBoard
-				:delay="delay"
-				:start="isPlaying"
-				:colors="colorsForRound"
-				@nextRound="onNextRound"
-				@endGame="endGame"
-				:key="keyComp"
-			/>
-		</div>
-		<div class="game__container">
-			<GameOptions
-				:lost="lost"
-				:round="round"
-				:key="keyOpt"
-				:game="isPlaying"
-				:lastRound="lastRound"
-				:lightDelay="String(delay)"
-				@start-game="startGame"
-				@delayChange="(value) => delay = value"
-			/>
+	<div class="wrap-game">
+		<h1 class="game-header">Simon says</h1>
+		<div class="game">
+			<div class="game__container">
+				<GameBoard
+					:delay="delay"
+					:start="isPlaying"
+					:colors="colorsForRound"
+					@nextRound="onNextRound"
+					@endGame="endGame"
+					:key="keyComp"
+				/>
+			</div>
+			<div class="game__container">
+				<GameOptions
+					:lost="lost"
+					:round="round"
+					:key="keyOpt"
+					:game="isPlaying"
+					:lastRound="lastRound"
+					:lightDelay="String(delay)"
+					@start-game="startGame"
+					@delayChange="(value) => delay = value"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -97,8 +100,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
-.game
+.wrap-game
+	display: flex
+	flex-direction: column
 	margin: 0 auto
+.game-header
+	font-size: 40px
+	font-weight: bold
+	text-align: center
+	margin-top: 0
+	margin-bottom: 50px
+.game
 	max-width: 720px
 	display: flex
 	&__container
